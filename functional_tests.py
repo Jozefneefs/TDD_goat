@@ -26,7 +26,7 @@ class NewVisitorTest(unittest.TestCase):
             'Enter a to-do item'
         )
         inputbox.send_keys('Buy peacock feathers')
-        # She types "Buy peacock feather    s" into a text box (Edith's hobby
+        # She types "Buy peacock feathers" into a text box (Edith's hobby
         # is tying fly-fishing lures)
         inputbox.send_keys(Keys.ENTER)
         time.sleep(1)
