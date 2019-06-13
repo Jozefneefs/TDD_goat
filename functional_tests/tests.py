@@ -5,7 +5,6 @@ from selenium.common.exceptions import WebDriverException
 import time
 
 MAX_WAIT = 10
-[...]
 
 
 class NewVisitorTest(LiveServerTestCase):
@@ -31,6 +30,7 @@ class NewVisitorTest(LiveServerTestCase):
             except (AssertionError, WebDriverException) as e:
                 if time.time() - start_time > MAX_WAIT:
                     raise e
+                time.sleep(0.2)
 
     def test_can_start_a_list_for_one_user(self):
         # Edith has heard about a cool new online to-do app. She goes
@@ -113,4 +113,3 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertIn('Buy milk', page_text)
 
         # Satisfied, they both go back to sleep
-
