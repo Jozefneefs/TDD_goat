@@ -4,6 +4,9 @@ language:
   python
 addons:
   firefox: latest
+  apt:
+    packages:
+      firefox-geckodriver
 python:
   - 3.7
 
