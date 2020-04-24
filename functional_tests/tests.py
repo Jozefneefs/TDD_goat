@@ -10,14 +10,13 @@ MAX_WAIT = 10
 
 
 class NewVisitorTest(LiveServerTestCase):
-    @classmethod
-    def setUpClass(cls):
+    def setUp(self):
         options = Options()
         options.headless = True
-        cls.browser = webdriver.Firefox()
-    @classmethod
-    def tearDownClass(cls):
-        cls.browser.quit()
+        self.browser = webdriver.Firefox()
+
+    def tearDown(self):
+        self.browser.quit()
 
     def check_for_row_in_list_table(self, row_text):
         table = self.browser.find_element_by_id('id_list_table')
